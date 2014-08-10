@@ -4,7 +4,7 @@ import com.octo.android.robospice.retrofit.RetrofitGsonSpiceService;
 
 public class RobospiceService extends RetrofitGsonSpiceService{
 
-	public static final String URL = "";
+	public static final String URL = "http://dwickrema.inetdev.fr/api";
 	
 	@Override
 	public void onCreate() {

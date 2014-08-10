@@ -20,11 +20,12 @@ public class MainActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ViewPager viewPager = (ViewPager)findViewById(R.id.pager);
+        viewPager.setOffscreenPageLimit(4);
         HomeViewPagerAdapater homeViewPagerAdapater = new HomeViewPagerAdapater(getSupportFragmentManager());
         viewPager.setAdapter(homeViewPagerAdapater);
         TitlePageIndicator pageIndicator = (TitlePageIndicator)findViewById(R.id.title_indicator);
         pageIndicator.setViewPager(viewPager);
-        ProductFragment cat = (ProductFragment)getSupportFragmentManager().findFragmentByTag(ProductFragment.TAG);
+
  
     }
 
