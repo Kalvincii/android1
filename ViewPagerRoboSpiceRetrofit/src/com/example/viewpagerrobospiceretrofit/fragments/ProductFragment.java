@@ -61,14 +61,14 @@ public class ProductFragment extends BaseFragment implements BaseFragment.IReque
 		getSpiceManager().execute(productRoboSpiceRequest, productRoboSpiceRequest.createCacheKey(),  DurationInMillis.ONE_DAY, new ProductRobospiceRequestListner());
 
 	}
-	
+
 	public class ProductRobospiceRequestListner implements RequestListener<Product>{
 
-		
+
 		public ProductRobospiceRequestListner() {
 
 		}
-		
+
 		@Override
 		public void onRequestFailure(SpiceException e) {
 			Log.e("ProductRobospiceRequestListner", e.getMessage());
@@ -80,7 +80,7 @@ public class ProductFragment extends BaseFragment implements BaseFragment.IReque
 			TextView tx = (TextView)getView().findViewById(R.id.textView1);
 			tx.setText(model.getProduct());
 		}
-		
+
 
 	}
 
