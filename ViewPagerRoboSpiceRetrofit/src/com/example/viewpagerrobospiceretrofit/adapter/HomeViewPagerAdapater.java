@@ -26,17 +26,18 @@ public class HomeViewPagerAdapater extends FragmentPagerAdapter {
 			
 			
 		case 1:
-			return new OrderFragment();
+			return new CategoryFragment();
+			
 			
 			
 		case 2: 
-			return new CategoryFragment();
+			return new OrderFragment();
 			
 		
 		default:
-			break;
+			return new ProductFragment();
 		}
-		return new ProductFragment();
+		
 	}
 
 	@Override
