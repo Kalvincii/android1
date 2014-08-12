@@ -2,7 +2,7 @@ package com.example.viewpagerrobospiceretrofit.fragments;
 
 import com.example.viewpagerrobospiceretrofit.R;
 import com.example.viewpagerrobospiceretrofit.model.Product;
-import com.example.viewpagerrobospiceretrofit.model.ProductRoboSpiceRequest;
+import com.example.viewpagerrobospiceretrofit.request.ProductRoboSpiceRequest;
 import com.octo.android.robospice.persistence.DurationInMillis;
 import com.octo.android.robospice.persistence.exception.SpiceException;
 import com.octo.android.robospice.request.listener.RequestListener;

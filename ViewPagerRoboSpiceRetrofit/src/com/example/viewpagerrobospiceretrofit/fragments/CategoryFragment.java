@@ -1,25 +1,21 @@
 package com.example.viewpagerrobospiceretrofit.fragments;
 
-import com.example.viewpagerrobospiceretrofit.R;
-import com.example.viewpagerrobospiceretrofit.fragments.ProductFragment.ProductRobospiceRequestListner;
-import com.example.viewpagerrobospiceretrofit.model.Category;
-import com.example.viewpagerrobospiceretrofit.model.CategoryRoboSpiceRequest;
-import com.example.viewpagerrobospiceretrofit.model.Product;
-import com.example.viewpagerrobospiceretrofit.model.ProductRoboSpiceRequest;
-import com.octo.android.robospice.persistence.DurationInMillis;
-import com.octo.android.robospice.persistence.exception.SpiceException;
-import com.octo.android.robospice.request.listener.RequestListener;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.viewpagerrobospiceretrofit.R;
+import com.example.viewpagerrobospiceretrofit.model.Category;
+import com.example.viewpagerrobospiceretrofit.request.CategoryRoboSpiceRequest;
+import com.octo.android.robospice.persistence.DurationInMillis;
+import com.octo.android.robospice.persistence.exception.SpiceException;
+import com.octo.android.robospice.request.listener.RequestListener;
 
 public class CategoryFragment extends BaseFragment implements BaseFragment.IRequest{
 	public static final String TAG = "CategoryFragment";
@@ -76,10 +72,10 @@ public class CategoryFragment extends BaseFragment implements BaseFragment.IRequ
 
 		@Override
 		public void onRequestSuccess(Category model) {
-			System.out.println(model.getCategory());
+			System.out.println(model.category);
 			TextView tx = (TextView)getView().findViewById(R.id.textView1);
-			tx.setText(model.getCategory());
-			Toast.makeText(getActivity(), model.getCategory(), Toast.LENGTH_LONG).show();
+			tx.setText(model.category);
+			Toast.makeText(getActivity(), model.category, Toast.LENGTH_LONG).show();
 		}
 
 

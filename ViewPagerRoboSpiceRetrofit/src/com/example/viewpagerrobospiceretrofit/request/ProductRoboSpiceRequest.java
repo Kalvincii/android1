@@ -1,5 +1,6 @@
-package com.example.viewpagerrobospiceretrofit.model;
+package com.example.viewpagerrobospiceretrofit.request;
 
+import com.example.viewpagerrobospiceretrofit.model.Product;
 import com.example.viewpagerrobospiceretrofit.robospice.ApiService;
 import com.octo.android.robospice.request.retrofit.RetrofitSpiceRequest;
 
