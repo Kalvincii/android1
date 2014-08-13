@@ -60,8 +60,9 @@ public class CategoryListFragment extends BaseFragment implements BaseFragment.I
 	
 	@Override
 	public void onListItemClick(ListView l, View v, int position, long id) {
+		Toast.makeText(getActivity(), "e", Toast.LENGTH_SHORT).show();
 		super.onListItemClick(l, v, position, id);
-		Toast.makeText(getActivity(), ((TextView)v).getText(), Toast.LENGTH_SHORT).show();
+
 	}
 
 	public class CategoryRobospiceRequestListner implements RequestListener<Menu>{

@@ -6,7 +6,14 @@ public class Category {
 
 	@Expose
 	private String nom;
+	
+	@Expose
+	private String img;
 
+	public String getImg() {
+		return img;
+	}
+		
 	public String getNom() {
 		return nom;
 	}
