@@ -7,6 +7,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import com.example.viewpagerrobospiceretrofit.R;
 import com.example.viewpagerrobospiceretrofit.adapter.ListAdapater;
 import com.example.viewpagerrobospiceretrofit.model.Menu;
@@ -23,8 +27,6 @@ public class CategoryListFragment extends BaseFragment implements BaseFragment.I
 		super.onCreate(savedInstanceState);
 		setRetainInstance(true);
 		performRequest();
-		
-
 	}
 
 	@Override
@@ -47,22 +49,24 @@ public class CategoryListFragment extends BaseFragment implements BaseFragment.I
 	@Override
 	public void onAttach(Activity activity) {
 		super.onAttach(activity);
-		
+
 	}
 
 	@Override
 	public void performRequest() {
 		CategoryRoboSpiceRequest categoryRoboSpiceRequest = new CategoryRoboSpiceRequest();
-		getSpiceManager().execute(categoryRoboSpiceRequest, categoryRoboSpiceRequest.createCacheKey(),  DurationInMillis.ONE_DAY, new CategoryRobospiceRequestListner());
-
-
+		getSpiceManager().execute(categoryRoboSpiceRequest, categoryRoboSpiceRequest.createCacheKey(),  DurationInMillis.ALWAYS_EXPIRED, new CategoryRobospiceRequestListner());
+	}
+	
+	@Override
+	public void onListItemClick(ListView l, View v, int position, long id) {
+		super.onListItemClick(l, v, position, id);
+		Toast.makeText(getActivity(), ((TextView)v).getText(), Toast.LENGTH_SHORT).show();
 	}
 
 	public class CategoryRobospiceRequestListner implements RequestListener<Menu>{
 
-
-		public CategoryRobospiceRequestListner() {
-
+		public CategoryRobospiceRequestListner(){
 		}
 
 		@Override
@@ -72,7 +76,7 @@ public class CategoryListFragment extends BaseFragment implements BaseFragment.I
 
 		@Override
 		public void onRequestSuccess(Menu model) {
-			ListAdapater listAdapater = new ListAdapater(getActivity(),model.getCategory());
+			ListAdapater listAdapater = new ListAdapater(getActivity(), model.getCategory());
 			setListAdapter(listAdapater);
 		}
 
