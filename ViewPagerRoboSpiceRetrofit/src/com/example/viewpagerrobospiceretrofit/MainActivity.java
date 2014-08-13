@@ -8,7 +8,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.viewpagerrobospiceretrofit.adapter.HomeViewPagerAdapater;
-import com.example.viewpagerrobospiceretrofit.fragments.CategoryFragment;
 import com.example.viewpagerrobospiceretrofit.fragments.ProductFragment;
 import com.viewpagerindicator.TitlePageIndicator;
 

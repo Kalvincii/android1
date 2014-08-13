@@ -76,9 +76,7 @@ public class ProductFragment extends BaseFragment implements BaseFragment.IReque
 
 		@Override
 		public void onRequestSuccess(Product model) {
-			System.out.println(model.getProduct());
-			TextView tx = (TextView)getView().findViewById(R.id.textView1);
-			tx.setText(model.getProduct());
+
 		}
 
 

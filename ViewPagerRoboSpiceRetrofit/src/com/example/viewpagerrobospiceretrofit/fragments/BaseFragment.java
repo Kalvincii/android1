@@ -5,8 +5,9 @@ import com.octo.android.robospice.SpiceManager;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.ListFragment;
 
-public class BaseFragment extends Fragment{
+public class BaseFragment extends ListFragment{
 
 	protected SpiceManager spiceManager = new SpiceManager(RobospiceService.class);
 	

@@ -1,6 +1,7 @@
 package com.example.viewpagerrobospiceretrofit.adapter;
 
-import com.example.viewpagerrobospiceretrofit.fragments.CategoryFragment;
+
+import com.example.viewpagerrobospiceretrofit.fragments.CategoryListFragment;
 import com.example.viewpagerrobospiceretrofit.fragments.OrderFragment;
 import com.example.viewpagerrobospiceretrofit.fragments.ProductFragment;
 
@@ -26,7 +27,7 @@ public class HomeViewPagerAdapater extends FragmentPagerAdapter {
 			
 			
 		case 1:
-			return new CategoryFragment();
+			return new CategoryListFragment();
 			
 			
 			

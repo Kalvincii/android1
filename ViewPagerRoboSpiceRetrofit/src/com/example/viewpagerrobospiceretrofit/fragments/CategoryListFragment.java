@@ -7,17 +7,15 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
-import android.widget.Toast;
-
 import com.example.viewpagerrobospiceretrofit.R;
-import com.example.viewpagerrobospiceretrofit.model.Category;
+import com.example.viewpagerrobospiceretrofit.adapter.ListAdapater;
+import com.example.viewpagerrobospiceretrofit.model.Menu;
 import com.example.viewpagerrobospiceretrofit.request.CategoryRoboSpiceRequest;
 import com.octo.android.robospice.persistence.DurationInMillis;
 import com.octo.android.robospice.persistence.exception.SpiceException;
 import com.octo.android.robospice.request.listener.RequestListener;
 
-public class CategoryFragment extends BaseFragment implements BaseFragment.IRequest{
+public class CategoryListFragment extends BaseFragment implements BaseFragment.IRequest{
 	public static final String TAG = "CategoryFragment";
 
 	@Override
@@ -25,6 +23,7 @@ public class CategoryFragment extends BaseFragment implements BaseFragment.IRequ
 		super.onCreate(savedInstanceState);
 		setRetainInstance(true);
 		performRequest();
+		
 
 	}
 
@@ -48,8 +47,9 @@ public class CategoryFragment extends BaseFragment implements BaseFragment.IRequ
 	@Override
 	public void onAttach(Activity activity) {
 		super.onAttach(activity);
+		
 	}
-	
+
 	@Override
 	public void performRequest() {
 		CategoryRoboSpiceRequest categoryRoboSpiceRequest = new CategoryRoboSpiceRequest();
@@ -58,7 +58,7 @@ public class CategoryFragment extends BaseFragment implements BaseFragment.IRequ
 
 	}
 
-	public class CategoryRobospiceRequestListner implements RequestListener<Category>{
+	public class CategoryRobospiceRequestListner implements RequestListener<Menu>{
 
 
 		public CategoryRobospiceRequestListner() {
@@ -71,15 +71,13 @@ public class CategoryFragment extends BaseFragment implements BaseFragment.IRequ
 		}
 
 		@Override
-		public void onRequestSuccess(Category model) {
-			System.out.println(model.category);
-			TextView tx = (TextView)getView().findViewById(R.id.textView1);
-			tx.setText(model.category);
-			Toast.makeText(getActivity(), model.category, Toast.LENGTH_LONG).show();
+		public void onRequestSuccess(Menu model) {
+			ListAdapater listAdapater = new ListAdapater(getActivity(),model.getCategory());
+			setListAdapter(listAdapater);
 		}
 
 
 	}
 
-	
+
 }
